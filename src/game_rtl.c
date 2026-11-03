@@ -15,10 +15,7 @@ void GameDrawPpuFrame(void)
 
 void GameSessionReset(void)
 {
-    /* Rematch / soft-return: clear anything that must not survive a new
-     * session. recomp-ai-rules/NETPLAY.md Â§3 â€” sticky state that "has always
-     * been fine" is the usual desync culprit, because single-player never
-     * re-enters the boot path twice in one process. */
+    /* Reset scheduling when starting a new session or hardware reset. */
     snes_beam_frame_driver_reset();
 }
 
